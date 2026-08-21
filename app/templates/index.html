@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Segmentation</title>
+</head>
+<body>
+
+<h2>Vendor Segmentation Predictor</h2>
+
+<form action="/predict" method="post">
+
+    <input type="text"
+           name="vendor_number"
+           placeholder="Vendor Number"
+           required>
+
+    <br><br>
+
+    <input type="text"
+           name="vendor_name"
+           placeholder="Vendor Name"
+           required>
+
+    <br><br>
+
+    <input type="number"
+           step="any"
+           name="total_sales"
+           placeholder="Total Sales"
+           required>
+
+    <br><br>
+
+    <input type="number"
+           step="any"
+           name="profit_margin"
+           placeholder="Profit Margin"
+           required>
+
+    <br><br>
+
+    <input type="number"
+           step="any"
+           name="stock_turnover"
+           placeholder="Stock Turnover"
+           required>
+
+    <br><br>
+
+    <button type="submit">
+        Predict Segment
+    </button>
+
+</form>
+
+{% if prediction %}
+
+<h3>Prediction Result</h3>
+
+<p>
+Vendor: {{vendor_name}}
+</p>
+
+<p>
+Segment: <b>{{prediction}}</b>
+</p>
+
+{% endif %}
+
+</body>
+</html>
